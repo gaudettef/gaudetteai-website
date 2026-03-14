@@ -29,122 +29,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Pricing Cards -->
+  <!-- Pricing Cards (dynamically loaded from API) -->
   <section class="pb-20 pt-8">
     <div class="max-w-5xl mx-auto px-5">
-      <div class="grid md:grid-cols-3 gap-6">
-
-        <!-- Personal -->
-        <div class="bg-white rounded-xl border border-warm-300 p-7 flex flex-col">
-          <div>
-            <p class="text-[12px] font-semibold text-warm-500 uppercase tracking-wider mb-2">Personal</p>
-            <div class="mb-4">
-              <span class="font-serif text-4xl font-bold text-warm-900 price-monthly">$49</span>
-              <span class="font-serif text-4xl font-bold text-warm-900 price-annual hidden">$39</span>
-              <span class="text-warm-500 text-[15px]">/month</span>
-            </div>
-            <p class="text-[14px] text-warm-600 leading-relaxed mb-6">
-              For individuals building their first Brain Network.
-            </p>
-          </div>
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Up to 5 Brains
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Persistent memory
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Intelligent routing
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> BYOK (Bring Your Own Keys)
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Email support
-            </li>
-          </ul>
-          <a href="https://app.gaudetteai.com" class="block text-center bg-white text-warm-900 border border-warm-300 px-6 py-3 rounded-lg font-semibold text-[14px] hover:border-warm-900 transition-colors">
-            Start Free Trial
-          </a>
-        </div>
-
-        <!-- Pro (Featured) -->
-        <div class="bg-white rounded-xl border-2 border-warm-900 p-7 flex flex-col relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-warm-900 text-warm-50 text-[10px] font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Most popular</div>
-          <div>
-            <p class="text-[12px] font-semibold text-warm-500 uppercase tracking-wider mb-2">Pro</p>
-            <div class="mb-4">
-              <span class="font-serif text-4xl font-bold text-warm-900 price-monthly">$149</span>
-              <span class="font-serif text-4xl font-bold text-warm-900 price-annual hidden">$119</span>
-              <span class="text-warm-500 text-[15px]">/month</span>
-            </div>
-            <p class="text-[14px] text-warm-600 leading-relaxed mb-6">
-              For professionals running serious knowledge operations.
-            </p>
-          </div>
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Up to 15 Brains
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Everything in Personal
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Advanced routing rules
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Document library
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Priority support
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Claude + Gemini models
-            </li>
-          </ul>
-          <a href="https://app.gaudetteai.com" class="block text-center bg-warm-900 text-warm-50 px-6 py-3 rounded-lg font-semibold text-[14px] hover:bg-warm-800 transition-colors">
-            Start Free Trial
-          </a>
-        </div>
-
-        <!-- Team -->
-        <div class="bg-white rounded-xl border border-warm-300 p-7 flex flex-col">
-          <div>
-            <p class="text-[12px] font-semibold text-warm-500 uppercase tracking-wider mb-2">Team</p>
-            <div class="mb-4">
-              <span class="font-serif text-4xl font-bold text-warm-900 price-monthly">$399</span>
-              <span class="font-serif text-4xl font-bold text-warm-900 price-annual hidden">$319</span>
-              <span class="text-warm-500 text-[15px]">/month</span>
-            </div>
-            <p class="text-[14px] text-warm-600 leading-relaxed mb-6">
-              For teams that need shared intelligence infrastructure.
-            </p>
-          </div>
-          <ul class="space-y-3 mb-8 flex-1">
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Unlimited Brains
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Everything in Pro
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Team collaboration
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Shared Brain access
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Admin dashboard
-            </li>
-            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
-              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Dedicated support
-            </li>
-          </ul>
-          <a href="https://app.gaudetteai.com" class="block text-center bg-white text-warm-900 border border-warm-300 px-6 py-3 rounded-lg font-semibold text-[14px] hover:border-warm-900 transition-colors">
-            Start Free Trial
-          </a>
-        </div>
+      <div id="pricing-cards" class="grid md:grid-cols-3 gap-6">
+        <!-- Loading skeleton -->
+        <div class="bg-white rounded-xl border border-warm-300 p-7 animate-pulse"><div class="h-4 bg-warm-200 rounded w-20 mb-4"></div><div class="h-10 bg-warm-200 rounded w-24 mb-4"></div><div class="h-3 bg-warm-200 rounded w-full mb-8"></div><div class="space-y-3"><div class="h-3 bg-warm-200 rounded w-3/4"></div><div class="h-3 bg-warm-200 rounded w-2/3"></div><div class="h-3 bg-warm-200 rounded w-3/4"></div></div></div>
+        <div class="bg-white rounded-xl border border-warm-300 p-7 animate-pulse"><div class="h-4 bg-warm-200 rounded w-20 mb-4"></div><div class="h-10 bg-warm-200 rounded w-24 mb-4"></div><div class="h-3 bg-warm-200 rounded w-full mb-8"></div><div class="space-y-3"><div class="h-3 bg-warm-200 rounded w-3/4"></div><div class="h-3 bg-warm-200 rounded w-2/3"></div><div class="h-3 bg-warm-200 rounded w-3/4"></div></div></div>
+        <div class="bg-white rounded-xl border border-warm-300 p-7 animate-pulse"><div class="h-4 bg-warm-200 rounded w-20 mb-4"></div><div class="h-10 bg-warm-200 rounded w-24 mb-4"></div><div class="h-3 bg-warm-200 rounded w-full mb-8"></div><div class="space-y-3"><div class="h-3 bg-warm-200 rounded w-3/4"></div><div class="h-3 bg-warm-200 rounded w-2/3"></div><div class="h-3 bg-warm-200 rounded w-3/4"></div></div></div>
       </div>
     </div>
   </section>
@@ -183,30 +75,81 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <script>
+    const API_URL = 'https://gmxshnvdapjrmuravgvn.supabase.co/functions/v1/get-plans';
+    const container = document.getElementById('pricing-cards');
     const monthlyBtn = document.getElementById('toggle-monthly');
     const annualBtn = document.getElementById('toggle-annual');
-    const monthlyPrices = document.querySelectorAll('.price-monthly');
-    const annualPrices = document.querySelectorAll('.price-annual');
+    let billingMode = 'monthly';
+    let plans = [];
+
+    async function loadPlans() {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        plans = (data.plans || []).filter(p => !p.is_enterprise);
+        renderCards();
+      } catch (e) {
+        console.error('Failed to load plans:', e);
+        if (container) container.innerHTML = '<p class="text-warm-500 text-center col-span-3">Unable to load pricing. Please refresh.</p>';
+      }
+    }
+
+    function renderCards() {
+      if (!container || !plans.length) return;
+      container.innerHTML = plans.map(p => {
+        const price = billingMode === 'annual' ? p.annual_price : p.monthly_price;
+        const isPopular = p.is_popular;
+        const features = Array.isArray(p.features) ? p.features : [];
+        const borderClass = isPopular ? 'border-2 border-warm-900' : 'border border-warm-300';
+        const btnClass = isPopular
+          ? 'bg-warm-900 text-warm-50 hover:bg-warm-800'
+          : 'bg-white text-warm-900 border border-warm-300 hover:border-warm-900';
+
+        return `
+          <div class="bg-white rounded-xl ${borderClass} p-7 flex flex-col ${isPopular ? 'relative' : ''}">
+            ${isPopular ? '<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-warm-900 text-warm-50 text-[10px] font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Most popular</div>' : ''}
+            <div>
+              <p class="text-[12px] font-semibold text-warm-500 uppercase tracking-wider mb-2">${p.name}</p>
+              <div class="mb-4">
+                <span class="font-serif text-4xl font-bold text-warm-900">$${price}</span>
+                <span class="text-warm-500 text-[15px]">/month</span>
+              </div>
+              <p class="text-[14px] text-warm-600 leading-relaxed mb-6">${p.description || ''}</p>
+            </div>
+            <ul class="space-y-3 mb-8 flex-1">
+              ${features.map(f => `
+                <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+                  <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> ${f}
+                </li>
+              `).join('')}
+            </ul>
+            <a href="https://app.gaudetteai.com" class="block text-center ${btnClass} px-6 py-3 rounded-lg font-semibold text-[14px] transition-colors">
+              Start Free Trial
+            </a>
+          </div>`;
+      }).join('');
+    }
 
     function showMonthly() {
+      billingMode = 'monthly';
       monthlyBtn?.classList.add('bg-warm-900', 'text-warm-50');
       monthlyBtn?.classList.remove('text-warm-600');
       annualBtn?.classList.remove('bg-warm-900', 'text-warm-50');
       annualBtn?.classList.add('text-warm-600');
-      monthlyPrices.forEach(el => el.classList.remove('hidden'));
-      annualPrices.forEach(el => el.classList.add('hidden'));
+      renderCards();
     }
 
     function showAnnual() {
+      billingMode = 'annual';
       annualBtn?.classList.add('bg-warm-900', 'text-warm-50');
       annualBtn?.classList.remove('text-warm-600');
       monthlyBtn?.classList.remove('bg-warm-900', 'text-warm-50');
       monthlyBtn?.classList.add('text-warm-600');
-      annualPrices.forEach(el => el.classList.remove('hidden'));
-      monthlyPrices.forEach(el => el.classList.add('hidden'));
+      renderCards();
     }
 
     monthlyBtn?.addEventListener('click', showMonthly);
     annualBtn?.addEventListener('click', showAnnual);
+    loadPlans();
   </script>
 </BaseLayout>
