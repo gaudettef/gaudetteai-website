@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Pricing">
+  <!-- Hero -->
+  <section class="pt-20 pb-12 md:pt-28 md:pb-16">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <p class="text-[13px] font-semibold text-amber-500 uppercase tracking-wider mb-4">Pricing</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-warm-900 leading-tight mb-4">
+        Simple, transparent pricing
+      </h1>
+      <p class="text-lg text-warm-600 leading-relaxed max-w-xl mx-auto">
+        14-day free trial on every plan. No credit card required.
+        Bring your own API keys for unlimited usage at cost.
+      </p>
+    </div>
+  </section>
+
+  <!-- Billing Toggle -->
+  <section class="pb-4">
+    <div class="max-w-5xl mx-auto px-5 flex justify-center">
+      <div class="inline-flex items-center gap-3 bg-white rounded-lg border border-warm-300 p-1">
+        <button id="toggle-monthly" class="px-4 py-2 text-[13px] font-semibold rounded-md bg-warm-900 text-warm-50 transition-all">Monthly</button>
+        <button id="toggle-annual" class="px-4 py-2 text-[13px] font-semibold rounded-md text-warm-600 hover:text-warm-900 transition-all">
+          Annual <span class="text-amber-500 text-[11px]">Save 20%</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="pb-20 pt-8">
+    <div class="max-w-5xl mx-auto px-5">
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Personal -->
+        <div class="bg-white rounded-xl border border-warm-300 p-7 flex flex-col">
+          <div>
+            <p class="text-[12px] font-semibold text-warm-500 uppercase tracking-wider mb-2">Personal</p>
+            <div class="mb-4">
+              <span class="font-serif text-4xl font-bold text-warm-900 price-monthly">$49</span>
+              <span class="font-serif text-4xl font-bold text-warm-900 price-annual hidden">$39</span>
+              <span class="text-warm-500 text-[15px]">/month</span>
+            </div>
+            <p class="text-[14px] text-warm-600 leading-relaxed mb-6">
+              For individuals building their first Brain Network.
+            </p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Up to 5 Brains
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Persistent memory
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Intelligent routing
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> BYOK (Bring Your Own Keys)
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Email support
+            </li>
+          </ul>
+          <a href="https://app.gaudetteai.com" class="block text-center bg-white text-warm-900 border border-warm-300 px-6 py-3 rounded-lg font-semibold text-[14px] hover:border-warm-900 transition-colors">
+            Start Free Trial
+          </a>
+        </div>
+
+        <!-- Pro (Featured) -->
+        <div class="bg-white rounded-xl border-2 border-warm-900 p-7 flex flex-col relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-warm-900 text-warm-50 text-[10px] font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Most popular</div>
+          <div>
+            <p class="text-[12px] font-semibold text-warm-500 uppercase tracking-wider mb-2">Pro</p>
+            <div class="mb-4">
+              <span class="font-serif text-4xl font-bold text-warm-900 price-monthly">$149</span>
+              <span class="font-serif text-4xl font-bold text-warm-900 price-annual hidden">$119</span>
+              <span class="text-warm-500 text-[15px]">/month</span>
+            </div>
+            <p class="text-[14px] text-warm-600 leading-relaxed mb-6">
+              For professionals running serious knowledge operations.
+            </p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Up to 15 Brains
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Everything in Personal
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Advanced routing rules
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Document library
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Priority support
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Claude + Gemini models
+            </li>
+          </ul>
+          <a href="https://app.gaudetteai.com" class="block text-center bg-warm-900 text-warm-50 px-6 py-3 rounded-lg font-semibold text-[14px] hover:bg-warm-800 transition-colors">
+            Start Free Trial
+          </a>
+        </div>
+
+        <!-- Team -->
+        <div class="bg-white rounded-xl border border-warm-300 p-7 flex flex-col">
+          <div>
+            <p class="text-[12px] font-semibold text-warm-500 uppercase tracking-wider mb-2">Team</p>
+            <div class="mb-4">
+              <span class="font-serif text-4xl font-bold text-warm-900 price-monthly">$399</span>
+              <span class="font-serif text-4xl font-bold text-warm-900 price-annual hidden">$319</span>
+              <span class="text-warm-500 text-[15px]">/month</span>
+            </div>
+            <p class="text-[14px] text-warm-600 leading-relaxed mb-6">
+              For teams that need shared intelligence infrastructure.
+            </p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-1">
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Unlimited Brains
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Everything in Pro
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Team collaboration
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Shared Brain access
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Admin dashboard
+            </li>
+            <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> Dedicated support
+            </li>
+          </ul>
+          <a href="https://app.gaudetteai.com" class="block text-center bg-white text-warm-900 border border-warm-300 px-6 py-3 rounded-lg font-semibold text-[14px] hover:border-warm-900 transition-colors">
+            Start Free Trial
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BYOK Section -->
+  <section class="pb-20">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-white rounded-xl border border-warm-300 p-8 text-center">
+        <div class="w-10 h-10 rounded-lg bg-warm-100 flex items-center justify-center mx-auto mb-4">
+          <span class="text-lg">&#128273;</span>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-warm-900 mb-2">Bring Your Own Keys</h3>
+        <p class="text-[14px] text-warm-600 leading-relaxed max-w-lg mx-auto">
+          All plans support BYOK. Connect your own Anthropic or Google AI API keys
+          and pay only for what you use, at provider cost. No markup.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise -->
+  <section class="pb-20">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-warm-900 rounded-2xl p-8 md:p-12 text-center">
+        <p class="text-[13px] font-semibold text-amber-500 uppercase tracking-wider mb-3">Enterprise</p>
+        <h2 class="font-serif text-2xl md:text-3xl font-bold text-warm-50 mb-3">Need custom deployment?</h2>
+        <p class="text-[15px] text-warm-400 mb-8 max-w-lg mx-auto">
+          On-premise hosting, custom integrations, dedicated support, and hands-on consulting
+          for organizations that need the full Knowledge That Compounds implementation.
+        </p>
+        <a href="/contact" class="inline-flex items-center justify-center bg-warm-50 text-warm-900 px-8 py-3.5 rounded-lg font-semibold text-[15px] hover:bg-white transition-colors">
+          Schedule a Discovery Call
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const monthlyBtn = document.getElementById('toggle-monthly');
+    const annualBtn = document.getElementById('toggle-annual');
+    const monthlyPrices = document.querySelectorAll('.price-monthly');
+    const annualPrices = document.querySelectorAll('.price-annual');
+
+    function showMonthly() {
+      monthlyBtn?.classList.add('bg-warm-900', 'text-warm-50');
+      monthlyBtn?.classList.remove('text-warm-600');
+      annualBtn?.classList.remove('bg-warm-900', 'text-warm-50');
+      annualBtn?.classList.add('text-warm-600');
+      monthlyPrices.forEach(el => el.classList.remove('hidden'));
+      annualPrices.forEach(el => el.classList.add('hidden'));
+    }
+
+    function showAnnual() {
+      annualBtn?.classList.add('bg-warm-900', 'text-warm-50');
+      annualBtn?.classList.remove('text-warm-600');
+      monthlyBtn?.classList.remove('bg-warm-900', 'text-warm-50');
+      monthlyBtn?.classList.add('text-warm-600');
+      annualPrices.forEach(el => el.classList.remove('hidden'));
+      monthlyPrices.forEach(el => el.classList.add('hidden'));
+    }
+
+    monthlyBtn?.addEventListener('click', showMonthly);
+    annualBtn?.addEventListener('click', showAnnual);
+  </script>
+</BaseLayout>

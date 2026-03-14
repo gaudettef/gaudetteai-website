@@ -7,43 +7,44 @@ interface Props {
   lang?: string;
 }
 
-const { title, description = 'Knowledge That Compounds', lang = 'en' } = Astro.props;
+const { title, description = 'AI knowledge that compounds — Brain Network by Gaudette AI', lang = 'en' } = Astro.props;
 
-// Navigation translations
 const nav = {
   en: {
     home: 'Home',
+    pricing: 'Pricing',
+    methodology: 'Methodology',
     consulting: 'Consulting',
-    ktc: 'KTC',
-    contact: 'Contact',
     blog: 'Blog',
-    community: 'Community',
     faq: 'FAQ',
-    language: 'Language',
+    contact: 'Contact',
     homeLink: '/',
+    pricingLink: '/pricing',
+    methodologyLink: '/methodology',
     consultingLink: '/consulting',
-    ktcLink: '/ktc',
-    contactLink: '/contact',
     blogLink: '/blog',
-    communityLink: '/community',
-    faqLink: '/faq'
+    faqLink: '/faq',
+    contactLink: '/contact',
+    cta: 'Start Free Trial',
+    ctaLink: 'https://app.gaudetteai.com',
   },
   fr: {
     home: 'Accueil',
+    pricing: 'Tarifs',
+    methodology: 'Méthodologie',
     consulting: 'Services',
-    ktc: 'KTC',
-    contact: 'Contact',
     blog: 'Blog',
-    community: 'Communauté',
     faq: 'FAQ',
-    language: 'Langue',
+    contact: 'Contact',
     homeLink: '/fr',
+    pricingLink: '/fr/tarifs',
+    methodologyLink: '/fr/methodologie',
     consultingLink: '/fr/consulting',
-    ktcLink: '/fr/ktc',
-    contactLink: '/fr/contact',
     blogLink: '/fr/blog',
-    communityLink: '/fr/communaute',
-    faqLink: '/fr/faq'
+    faqLink: '/fr/faq',
+    contactLink: '/fr/contact',
+    cta: 'Essai gratuit',
+    ctaLink: 'https://app.gaudetteai.com',
   }
 };
 
@@ -56,245 +57,196 @@ const t = nav[lang as keyof typeof nav] || nav.en;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    
-    <!-- Favicon -->
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <!-- Open Graph / Social Media -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
     <meta property="og:image" content="https://gaudetteai.com/og-image.png" />
     <meta property="og:image:width" content="800" />
     <meta property="og:image:height" content="800" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://gaudetteai.com/og-image.png" />
-    
-    <title>{title} | Gaudette AI</title>
-    <style>
-      /* Language Dropdown */
-      .language-dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      .language-button {
-        padding: 0.75rem 1.5rem;
-        margin: -0.75rem -1.5rem;
-        background: none;
-        border: none;
-        color: inherit;
-        font: inherit;
-        cursor: pointer;
-        font-weight: 600;
-        white-space: nowrap;
-      }
-      .language-button:hover {
-        color: #2563eb;
-      }
-      .language-menu {
-        display: none;
-        position: absolute;
-        right: -0.3rem;
-        top: 100%;
-        background: white;
-        border: 1px solid #e2e8f0;
-        border-radius: 0.5rem;
-        min-width: 125px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        z-index: 100;
-        margin-top: 0.5rem;
-      }
-      .language-dropdown:hover .language-menu {
-        display: block;
-      }
-      .language-menu a {
-        display: block;
-        padding: 0.75rem 1rem;
-        color: #334155;
-        text-decoration: none;
-        transition: all 0.2s;
-      }
-      .language-menu a:hover {
-        background: #f1f5f9;
-        color: #2563eb;
-      }
-      .language-menu a:first-child {
-        border-radius: 0.5rem 0.5rem 0 0;
-      }
-      .language-menu a:last-child {
-        border-radius: 0 0 0.5rem 0.5rem;
-      }
 
-      /* Mobile Menu */
+    <title>{title} | Gaudette AI</title>
+
+    <style>
       .mobile-menu {
         display: none;
-        position: fixed;
-        top: 73px;
-        left: 0;
-        right: 0;
-        background: white;
-        border-bottom: 1px solid #e2e8f0;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        z-index: 40;
       }
       .mobile-menu.active {
         display: block;
       }
-      .mobile-menu a {
-        display: block;
-        padding: 1rem 1.5rem;
-        color: #334155;
-        text-decoration: none;
-        font-weight: 500;
-        border-bottom: 1px solid #f1f5f9;
-        transition: all 0.2s;
-      }
-      .mobile-menu a:hover {
-        background: #f1f5f9;
-        color: #2563eb;
-      }
-      .mobile-menu a:last-child {
-        border-bottom: none;
-      }
-
-      /* Hamburger Icon */
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        gap: 4px;
-        cursor: pointer;
-        padding: 8px;
-      }
-      .hamburger span {
-        width: 24px;
-        height: 3px;
-        background: #334155;
-        border-radius: 2px;
-        transition: all 0.3s;
-      }
-      .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
-      }
-      .hamburger.active span:nth-child(2) {
-        opacity: 0;
-      }
-      .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
-      }
-
-      /* Mobile Styles */
       @media (max-width: 768px) {
-        .hamburger {
-          display: flex;
-        }
-        .desktop-nav {
-          display: none;
-        }
-        .language-button {
-          padding: 0.5rem 0.75rem;
-          margin: -0.5rem -0.75rem;
-          font-size: 0.875rem;
-        }
+        .desktop-nav { display: none; }
+        .hamburger { display: flex; }
       }
-
-      /* Desktop Styles */
       @media (min-width: 769px) {
-        .mobile-menu {
-          display: none !important;
-        }
+        .mobile-menu { display: none !important; }
+        .hamburger { display: none; }
       }
     </style>
   </head>
-  <body class="bg-gray-100 text-gray-900">
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-      <nav class="container mx-auto px-4 py=0.3">
-        <div class="flex md:grid md:grid-cols-3 items-center justify-between">
-          <!-- Left: Logo -->
-          <a href={t.homeLink} class="flex items-center hover:opacity-80 transition-opacity">
-            <img src="/images/gaudette-ai-logo-light.png" alt="Gaudette AI" class="h-20" />
+  <body class="bg-warm-50 text-warm-900">
+    <!-- Header -->
+    <header class="bg-white border-b border-warm-300 sticky top-0 z-50">
+      <nav class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+        <!-- Logo -->
+        <a href={t.homeLink} class="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+          <div class="w-8 h-8 rounded-lg bg-warm-900 flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 68" width="18" height="20">
+              <line x1="32" y1="34" x2="48" y2="34" stroke="#FAF9F7" stroke-width="1.5" opacity="0.35"/>
+              <line x1="32" y1="34" x2="32" y2="6" stroke="#FAF9F7" stroke-width="1.5" opacity="0.45"/>
+              <line x1="32" y1="34" x2="58" y2="22" stroke="#FAF9F7" stroke-width="1.5" opacity="0.45"/>
+              <line x1="32" y1="34" x2="52" y2="50" stroke="#FAF9F7" stroke-width="1.5" opacity="0.45"/>
+              <line x1="32" y1="34" x2="26" y2="62" stroke="#FAF9F7" stroke-width="1.5" opacity="0.45"/>
+              <line x1="32" y1="34" x2="11" y2="22" stroke="#FAF9F7" stroke-width="1.5" opacity="0.45"/>
+              <circle cx="32" cy="6" r="4.5" fill="#FAF9F7" opacity="0.6"/>
+              <circle cx="58" cy="22" r="3.5" fill="#FAF9F7" opacity="0.55"/>
+              <circle cx="52" cy="50" r="3.5" fill="#FAF9F7" opacity="0.55"/>
+              <circle cx="26" cy="62" r="4.5" fill="#FAF9F7" opacity="0.6"/>
+              <circle cx="11" cy="22" r="3.5" fill="#FAF9F7" opacity="0.55"/>
+              <circle cx="48" cy="34" r="3" fill="#FAF9F7" opacity="0.5"/>
+              <circle cx="32" cy="34" r="8" fill="#FAF9F7"/>
+            </svg>
+          </div>
+          <span class="font-serif text-[15px] font-semibold text-warm-900">Gaudette AI</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="desktop-nav flex items-center gap-6">
+          <a href={t.pricingLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.pricing}</a>
+          <a href={t.methodologyLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.methodology}</a>
+          <a href={t.consultingLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.consulting}</a>
+          <a href={t.blogLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.blog}</a>
+          <a href={t.faqLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.faq}</a>
+          <span class="text-warm-300">|</span>
+          <a href={lang === 'fr' ? '/' : '/fr'} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">
+            {lang === 'fr' ? 'EN' : 'FR'}
           </a>
-          
-          <!-- Center: Desktop Nav Links -->
-          <div class="desktop-nav flex items-center justify-center space-x-6">
-            <a href={t.homeLink} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">{t.home}</a>
-            <a href={t.consultingLink} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">{t.consulting}</a>
-            <a href={t.ktcLink} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">{t.ktc}</a>
-            <a href={t.contactLink} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">{t.contact}</a>
-            <a href={t.blogLink} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">{t.blog}</a>
-            <a href={t.communityLink} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">{t.community}</a>
-            <a href={t.faqLink} class="text-gray-700 hover:text-blue-600 font-medium transition-colors">{t.faq}</a>
-          </div>
-          
-          <!-- Right: Language + Hamburger -->
-          <div class="flex items-center justify-end gap-4">
-            <div class="language-dropdown">
-              <button class="language-button text-gray-700">
-                🌐 <span class="hidden md:inline">{t.language}</span> ▼
-              </button>
-              <div class="language-menu">
-                <a href="/">🇬🇧 English</a>
-                <a href="/fr">🇫🇷 Français</a>
-              </div>
-            </div>
-            
-            <!-- Mobile Hamburger -->
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
-          </div>
+          <a
+            href={t.ctaLink}
+            class="ml-1 text-[13px] font-semibold bg-warm-900 text-warm-50 px-4 py-2 rounded-lg hover:bg-warm-800 transition-colors"
+          >
+            {t.cta}
+          </a>
+        </div>
+
+        <!-- Mobile: lang + hamburger -->
+        <div class="flex items-center gap-3 md:hidden">
+          <a href={lang === 'fr' ? '/' : '/fr'} class="text-[13px] font-medium text-warm-600">{lang === 'fr' ? 'EN' : 'FR'}</a>
+          <button class="hamburger flex flex-col gap-[5px] p-2 cursor-pointer" id="hamburger" aria-label="Toggle menu">
+            <span class="w-5 h-[2px] bg-warm-900 rounded transition-all"></span>
+            <span class="w-5 h-[2px] bg-warm-900 rounded transition-all"></span>
+            <span class="w-5 h-[2px] bg-warm-900 rounded transition-all"></span>
+          </button>
         </div>
       </nav>
 
       <!-- Mobile Menu -->
-      <div class="mobile-menu" id="mobile-menu">
-        <a href={t.homeLink}>{t.home}</a>
-        <a href={t.consultingLink}>{t.consulting}</a>
-        <a href={t.ktcLink}>{t.ktc}</a>
-        <a href={t.contactLink}>{t.contact}</a>
-        <a href={t.blogLink}>{t.blog}</a>
-        <a href={t.communityLink}>{t.community}</a>
-        <a href={t.faqLink}>{t.faq}</a>
+      <div class="mobile-menu border-t border-warm-300 bg-white" id="mobile-menu">
+        <a href={t.pricingLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.pricing}</a>
+        <a href={t.methodologyLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.methodology}</a>
+        <a href={t.consultingLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.consulting}</a>
+        <a href={t.blogLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.blog}</a>
+        <a href={t.faqLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.faq}</a>
+        <a href={t.contactLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.contact}</a>
+        <div class="px-5 py-4">
+          <a href={t.ctaLink} class="block text-center text-[14px] font-semibold bg-warm-900 text-warm-50 px-4 py-2.5 rounded-lg">{t.cta}</a>
+        </div>
       </div>
     </header>
-    
+
     <main>
       <slot />
     </main>
-    
-    <footer class="bg-white border-t border-gray-200 py-8 mt-16">
-      <div class="container mx-auto px-4 text-center text-gray-600">
-        <p>&copy; 2026 Gaudette AI inc. All rights reserved.</p>
+
+    <!-- Footer -->
+    <footer class="border-t border-warm-300 bg-white mt-24">
+      <div class="max-w-6xl mx-auto px-5 py-16">
+        <div class="grid md:grid-cols-4 gap-10">
+          <!-- Brand -->
+          <div class="md:col-span-1">
+            <div class="flex items-center gap-2.5 mb-4">
+              <div class="w-7 h-7 rounded-md bg-warm-900 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 68" width="14" height="16">
+                  <circle cx="32" cy="34" r="8" fill="#FAF9F7"/>
+                  <circle cx="32" cy="6" r="3.5" fill="#FAF9F7" opacity="0.5"/>
+                  <circle cx="58" cy="22" r="3" fill="#FAF9F7" opacity="0.4"/>
+                  <circle cx="52" cy="50" r="3" fill="#FAF9F7" opacity="0.4"/>
+                  <circle cx="11" cy="22" r="3" fill="#FAF9F7" opacity="0.4"/>
+                </svg>
+              </div>
+              <span class="font-serif text-[14px] font-semibold">Gaudette AI</span>
+            </div>
+            <p class="text-[13px] text-warm-600 leading-relaxed">AI knowledge that compounds.</p>
+            <p class="text-[12px] text-warm-500 mt-3">Sherbrooke, QC</p>
+          </div>
+
+          <!-- Product -->
+          <div>
+            <h4 class="text-[11px] font-semibold text-warm-500 uppercase tracking-wider mb-4">Product</h4>
+            <ul class="space-y-2.5">
+              <li><a href={t.pricingLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.pricing}</a></li>
+              <li><a href={t.ctaLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">Brain Network</a></li>
+              <li><a href={t.methodologyLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.methodology}</a></li>
+            </ul>
+          </div>
+
+          <!-- Company -->
+          <div>
+            <h4 class="text-[11px] font-semibold text-warm-500 uppercase tracking-wider mb-4">{lang === 'fr' ? 'Entreprise' : 'Company'}</h4>
+            <ul class="space-y-2.5">
+              <li><a href={t.consultingLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.consulting}</a></li>
+              <li><a href={t.blogLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.blog}</a></li>
+              <li><a href={t.contactLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.contact}</a></li>
+            </ul>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <h4 class="text-[11px] font-semibold text-warm-500 uppercase tracking-wider mb-4">Resources</h4>
+            <ul class="space-y-2.5">
+              <li><a href={t.faqLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.faq}</a></li>
+              <li><a href="https://reddit.com/r/KTCommunity" target="_blank" rel="noopener" class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">Community</a></li>
+              <li><a href="mailto:contact@gaudetteai.com" class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">contact@gaudetteai.com</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-warm-300 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p class="text-[12px] text-warm-500">&copy; 2026 Gaudette AI inc. All rights reserved.</p>
+          <div class="flex gap-6">
+            <a href={lang === 'fr' ? '/' : '/fr'} class="text-[12px] text-warm-500 hover:text-warm-900 transition-colors">{lang === 'fr' ? 'English' : 'Français'}</a>
+          </div>
+        </div>
       </div>
     </footer>
 
     <script>
-      // Mobile menu toggle
       const hamburger = document.getElementById('hamburger');
       const mobileMenu = document.getElementById('mobile-menu');
-      
       if (hamburger && mobileMenu) {
         hamburger.addEventListener('click', () => {
           hamburger.classList.toggle('active');
           mobileMenu.classList.toggle('active');
         });
-
-        // Close menu when clicking a link
-        const menuLinks = mobileMenu.querySelectorAll('a');
-        menuLinks.forEach(link => {
+        mobileMenu.querySelectorAll('a').forEach(link => {
           link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             mobileMenu.classList.remove('active');
           });
         });
-
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
           if (!hamburger.contains(e.target as Node) && !mobileMenu.contains(e.target as Node)) {
             hamburger.classList.remove('active');
             mobileMenu.classList.remove('active');
-          };
+          }
         });
       }
     </script>

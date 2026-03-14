@@ -1,83 +1,53 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
+
 <BaseLayout title="Consulting">
-  <!-- Hero Section - In white card -->
-  <section class="bg-gray-100">
-    <div class="container mx-auto px-4 pt-16 pb-12 max-w-4xl">
-      <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-lg">
-        <div class="inline-block mb-4">
-          <div class="h-1 w-20 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full mb-6"></div>
-        </div>
-        <h1 class="text-4xl font-bold mb-6 text-gray-900">Consulting Services</h1>
-        <p class="text-lg text-gray-700 leading-relaxed max-w-2xl">
-          We help organizations implement Knowledge That Compounds systems.
-        </p>
+  <section class="pt-20 pb-16 md:pt-28 md:pb-20">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <p class="text-[13px] font-semibold text-amber-500 uppercase tracking-wider mb-4">Enterprise</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-warm-900 leading-tight mb-6">Custom implementation</h1>
+      <p class="text-lg text-warm-600 leading-relaxed max-w-2xl mx-auto">
+        For organizations that need a tailored Brain Network with dedicated architecture,
+        on-premise deployment, or hands-on team training.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="max-w-4xl mx-auto px-5 grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl border border-warm-300 p-7">
+        <div class="w-10 h-10 rounded-lg bg-warm-100 flex items-center justify-center mb-4"><span class="font-serif font-bold text-warm-900">01</span></div>
+        <h3 class="font-serif text-lg font-semibold text-warm-900 mb-2">Architecture &amp; Design</h3>
+        <p class="text-[14px] text-warm-600 leading-relaxed">We design your Brain Network topology &mdash; which Brains you need, how they route, what knowledge to capture.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-warm-300 p-7">
+        <div class="w-10 h-10 rounded-lg bg-warm-100 flex items-center justify-center mb-4"><span class="font-serif font-bold text-warm-900">02</span></div>
+        <h3 class="font-serif text-lg font-semibold text-warm-900 mb-2">Deployment</h3>
+        <p class="text-[14px] text-warm-600 leading-relaxed">We build and deploy your Brain Network. System prompts, routing rules, persistent memory structures, all configured.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-warm-300 p-7">
+        <div class="w-10 h-10 rounded-lg bg-warm-100 flex items-center justify-center mb-4"><span class="font-serif font-bold text-warm-900">03</span></div>
+        <h3 class="font-serif text-lg font-semibold text-warm-900 mb-2">Team Training</h3>
+        <p class="text-[14px] text-warm-600 leading-relaxed">Your team learns the KTC methodology. How to interact with Brains, capture knowledge, and maintain compounding systems.</p>
+      </div>
+      <div class="bg-white rounded-xl border border-warm-300 p-7">
+        <div class="w-10 h-10 rounded-lg bg-warm-100 flex items-center justify-center mb-4"><span class="font-serif font-bold text-warm-900">04</span></div>
+        <h3 class="font-serif text-lg font-semibold text-warm-900 mb-2">Ongoing Support</h3>
+        <p class="text-[14px] text-warm-600 leading-relaxed">Continuous refinement. We monitor Brain performance, adjust routing, and evolve your network as your organization grows.</p>
       </div>
     </div>
   </section>
 
-  <!-- Pricing Cards Section - Seamless -->
-  <section class="bg-gray-100 pb-16">
-    <div class="container mx-auto px-4 max-w-5xl">
-      <div class="grid gap-8 md:grid-cols-2">
-        <!-- Starter Card -->
-        <div class="group bg-white border-2 border-gray-200 p-8 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-blue-400 cursor-pointer relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-blue-400"></div>
-          <div class="text-5xl mb-6">🚀</div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Starter</h3>
-          <p class="text-gray-700 mb-6 leading-relaxed">
-            Templates and guidance to implement 1-2 Brains yourself.
-          </p>
-          <div class="pt-4 border-t border-gray-200">
-            <p class="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-1">Starting at</p>
-            <p class="text-3xl font-bold text-gray-900">$500</p>
-          </div>
+  <section class="pb-8">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-warm-900 rounded-2xl p-8 md:p-12 text-center">
+        <h2 class="font-serif text-2xl md:text-3xl font-bold text-warm-50 mb-3">Let's build your Brain Network</h2>
+        <p class="text-[15px] text-warm-400 mb-8 max-w-lg mx-auto">Schedule a discovery call. We'll discuss your needs and propose a tailored implementation.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="/contact" class="inline-flex items-center justify-center bg-warm-50 text-warm-900 px-8 py-3.5 rounded-lg font-semibold text-[15px] hover:bg-white transition-colors">Schedule Discovery Call</a>
+          <a href="/pricing" class="inline-flex items-center justify-center text-warm-400 border border-warm-700 px-8 py-3.5 rounded-lg font-semibold text-[15px] hover:text-warm-50 hover:border-warm-400 transition-colors">View Self-Serve Plans</a>
         </div>
-
-        <!-- Professional Card - Featured -->
-        <div class="group bg-white border-2 border-blue-400 p-8 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl cursor-pointer relative overflow-hidden shadow-lg">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-blue-400"></div>
-          <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</div>
-          <div class="text-5xl mb-6">💼</div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Professional</h3>
-          <p class="text-gray-700 mb-6 leading-relaxed">
-            We architect 2-3 Brain networks and train your team.
-          </p>
-          <div class="pt-4 border-t border-gray-200">
-            <p class="text-sm text-gray-500 font-semibold uppercase tracking-wide mb-1">Starting at</p>
-            <p class="text-3xl font-bold text-gray-900">$5,000</p>
-          </div>
-        </div>
-
-        <!-- Enterprise Card - Full Width -->
-        <div class="group bg-white border-2 border-gray-200 p-8 rounded-xl md:col-span-2 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:border-blue-400 cursor-pointer relative overflow-hidden">
-          <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-blue-400"></div>
-          <div class="text-5xl mb-6">🏢</div>
-          <h3 class="text-2xl font-bold mb-4 text-gray-900">Enterprise</h3>
-          <p class="text-gray-700 mb-6 leading-relaxed max-w-3xl">
-            Full Standards 1-14, done-for-you implementation, 
-            self-improving systems.
-          </p>
-          <div class="pt-4 border-t border-gray-200">
-            <p class="text-gray-700 text-center">
-              <big>
-              Enterprise solutions are tailored to your organization.
-             
-              <a href="/contact" class="text-blue-600 hover:text-blue-800 underline font-semibold">
-                Schedule a Discovery Call
-              </a>.
-               </big> 
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="mt-16 text-center">
-        <a href="/contact" class="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg hover:bg-blue-700 font-semibold text-lg shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1">
-          Schedule Discovery Call
-        </a>
       </div>
     </div>
   </section>

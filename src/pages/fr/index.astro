@@ -2,113 +2,72 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Accueil" lang="fr">
-  <!-- Hero Section - Mobile Optimized -->
-  <section class="bg-gray-100">
-    <div class="container mx-auto px-4 pt-8 md:pt-16 pb-8 md:pb-12 max-w-4xl">
-      <div class="bg-white p-4 md:p-8 rounded-xl border border-gray-200 shadow-lg">
-        <div class="text-center">
-          <div class="inline-block mb-3 md:mb-4">
-            <div class="h-1 w-16 md:w-20 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full mx-auto mb-4 md:mb-6"></div>
-          </div>
-          <h1 class="text-3xl md:text-5xl font-bold mb-4 md:mb-6 text-gray-900 leading-tight">Knowledge That Compounds</h1>
-          <p class="text-lg md:text-2xl text-gray-700 mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto">
-            <i>Une méthodologie pour construire des systèmes IA personnalisés où les connaissances persistent, 
-            se multiplient et se transmettent intelligemment.</i>
+<BaseLayout title="IA qui accumule le savoir" lang="fr">
+  <!-- Hero -->
+  <section class="pt-20 pb-16 md:pt-28 md:pb-24">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <p class="text-[13px] font-semibold text-amber-500 uppercase tracking-wider mb-4">Brain Network</p>
+      <h1 class="font-serif text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-warm-900 leading-[1.15] mb-6">
+        Le savoir IA qui<br/>s'accumule
+      </h1>
+      <p class="text-lg md:text-xl text-warm-600 leading-relaxed max-w-2xl mx-auto mb-10">
+        Chaque conversation IA repart de zero. La votre n'a pas a le faire.
+        Construisez un reseau de Cerveaux IA specialises ou le savoir persiste,
+        s'achemine intelligemment et s'ameliore a chaque interaction.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://app.gaudetteai.com" class="inline-flex items-center justify-center bg-warm-900 text-warm-50 px-7 py-3 rounded-lg font-semibold text-[15px] hover:bg-warm-800 transition-colors shadow-sm">
+          Essai gratuit
+        </a>
+        <a href="/fr/tarifs" class="inline-flex items-center justify-center bg-white text-warm-900 px-7 py-3 rounded-lg font-semibold text-[15px] border border-warm-300 hover:border-warm-900 transition-colors">
+          Voir les tarifs
+        </a>
+      </div>
+      <p class="text-[12px] text-warm-500 mt-4">14 jours d'essai gratuit. Aucune carte de credit requise.</p>
+    </div>
+  </section>
+
+  <!-- Problem / Solution -->
+  <section class="pb-20">
+    <div class="max-w-4xl mx-auto px-5">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-xl border border-warm-300 p-8">
+          <div class="w-1 h-8 bg-warm-400 rounded-full mb-5"></div>
+          <h2 class="font-serif text-2xl font-bold text-warm-900 mb-4">Le probleme</h2>
+          <p class="text-[15px] text-warm-600 leading-relaxed mb-3">
+            Chaque conversation IA repart de zero. Le contexte disparait entre les sessions.
+            Le savoir se perd. Vous vous repetez constamment.
           </p>
-          <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center">
-            <a href="/fr/consulting" class="bg-white text-blue-600 border-2 border-blue-600 px-6 md:px-8 py-3 rounded-lg hover:bg-blue-50 font-semibold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 text-center">
-              Travailler Avec Nous
-            </a>
-            <a href="/fr/ktc" class="bg-white text-blue-600 border-2 border-blue-600 px-6 md:px-8 py-3 rounded-lg hover:bg-blue-50 font-semibold shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5 text-center">
-              Découvrir la Méthode
-            </a>
-          </div>
+          <p class="text-[15px] text-warm-600 leading-relaxed">
+            C'est comme avoir un collegue brillant qui oublie tout chaque nuit.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-warm-300 p-8">
+          <div class="w-1 h-8 bg-amber-500 rounded-full mb-5"></div>
+          <h2 class="font-serif text-2xl font-bold text-warm-900 mb-4">La solution</h2>
+          <p class="text-[15px] text-warm-600 leading-relaxed mb-3">
+            Construisez un reseau de Cerveaux IA specialises ou le savoir persiste,
+            s'accumule et s'achemine intelligemment.
+          </p>
+          <p class="text-[15px] text-warm-700 leading-relaxed font-medium">
+            Voici Knowledge That Compounds.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Book Image Section -->
-  <section class="bg-gray-100 pb-8 md:pb-12">
-    <div class="container mx-auto px-4 max-w-2xl">
-      <div class="bg-white p-6 md:p-10 rounded-xl border border-gray-200 shadow-lg">
-        <div class="flex flex-col items-center">
-          <div class="w-full max-w-xl">
-            <a href="/fr/ktc">
-              <img 
-                src="/images/ktc-book-cover.jpg" 
-                alt="Couverture du livre Knowledge That Compounds" 
-                class="w-full rounded-lg shadow-2xl hover:shadow-3xl transition-shadow cursor-pointer"
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Problem + Solution Section - Mobile Optimized -->
-  <section class="bg-gray-100">
-    <div class="container mx-auto px-4 py-8 md:py-12 max-w-4xl">
-      <div class="bg-white p-4 md:p-8 rounded-xl border border-gray-200 shadow-lg">
-        <!-- Problem -->
-        <div class="flex mb-8 md:mb-10">
-          <div class="w-1 bg-gradient-to-b from-blue-600 to-blue-400 rounded-full mr-4 md:mr-6 flex-shrink-0"></div>
-          <div>
-            <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-gray-900">Le Problème</h2>
-            <p class="text-base md:text-lg text-gray-700 mb-3 md:mb-4 leading-relaxed">
-              Chaque conversation IA repart de zéro. Le contexte disparaît entre les sessions. 
-              Les connaissances se perdent. Vous vous répétez constamment.
-            </p>
-            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
-              C'est comme avoir un collègue brillant qui oublie tout du jour au lendemain.
-            </p>
-          </div>
-        </div>
-
-        <!-- Solution -->
-        <div class="flex">
-          <div class="w-1 bg-gradient-to-b from-blue-600 to-blue-400 rounded-full mr-4 md:mr-6 flex-shrink-0"></div>
-          <div>
-            <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-gray-900">La Solution</h2>
-            <p class="text-base md:text-lg text-gray-700 mb-3 md:mb-4 leading-relaxed">
-              Construire des systèmes où les connaissances persistent, se multiplient et 
-              se dirigent intelligemment à travers des "Cerveaux" IA spécialisés.
-            </p>
-            <p class="text-base md:text-lg text-gray-700 leading-relaxed">
-              C'est la Connaissance Qui Se Multiplie.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section - Mobile Optimized -->
-  <section class="bg-gray-100 pb-12 md:pb-16">
-    <div class="container mx-auto px-4 py-8 md:py-12 max-w-5xl">
-      <div class="bg-white p-4 md:p-8 rounded-xl border border-gray-200 shadow-lg">
-        <div class="flex">
-          <div class="w-1 bg-gradient-to-b from-blue-600 to-blue-400 rounded-full mr-4 md:mr-6 flex-shrink-0"></div>
-          <div>
-            <h2 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-gray-900">À Propos de Gaudette AI</h2>
-            <p class="text-base md:text-lg text-gray-700 mb-3 md:mb-4 leading-relaxed">
-              Gaudette AI inc. aide les travailleurs du savoir à construire des systèmes IA qui se souviennent.
-            </p>
-            <p class="text-base md:text-lg text-gray-700 mb-4 md:mb-6 leading-relaxed">
-              Fondée en janvier 2026 par Frédéric Gaudette, nous nous spécialisons dans la 
-              méthodologie Connaissance Qui Se Multiplie (KTC).
-            </p>
-            <div class="border-t border-gray-200 pt-4 md:pt-6 mt-4 md:mt-6">
-              <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gray-900">Notre Approche</h3>
-              <p class="text-base md:text-lg text-gray-700 leading-relaxed">
-                Nous ne vendons pas de logiciel. Nous enseignons une méthodologie et déployons des systèmes qui 
-                multiplient les connaissances au fil du temps.
-              </p>
-            </div>
-          </div>
-        </div>
+  <!-- CTA -->
+  <section class="pb-8">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-warm-900 rounded-2xl p-8 md:p-12 text-center">
+        <h2 class="font-serif text-2xl md:text-3xl font-bold text-warm-50 mb-3">Pret a arreter de vous repeter?</h2>
+        <p class="text-[15px] text-warm-400 mb-8 max-w-lg mx-auto">
+          Commencez votre essai gratuit de 14 jours. Votre Cerveau OPS vous interviewera et construira votre reseau des le premier jour.
+        </p>
+        <a href="https://app.gaudetteai.com" class="inline-flex items-center justify-center bg-warm-50 text-warm-900 px-8 py-3.5 rounded-lg font-semibold text-[15px] hover:bg-white transition-colors">
+          Essai gratuit
+        </a>
       </div>
     </div>
   </section>

@@ -1,43 +1,21 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogPostCard from '../../components/BlogPostCard.astro';
-
-// Get all blog posts, filter out drafts, and sort by date (newest first)
-const allPosts = await getCollection('blog');
-const publishedPosts = allPosts
-  .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const pageTitle = "Blog";
-const pageDescription = "Insights on AI productivity, knowledge management, and building systems that remember.";
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription}>
-  <!-- Main Content -->
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <!-- Hero Card with Blue Line (matching other pages) -->
-    <div class="bg-white rounded-xl border border-gray-200 shadow-lg overflow-hidden mb-16">
-      <div class="p-12">
-        <div class="h-1 w-20 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full mb-6"></div>
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">Blog</h1>
-        <p class="text-xl text-gray-600">
-          Insights on AI productivity, knowledge management, and building systems that remember.
-        </p>
+<BaseLayout title="Blog">
+  <section class="pt-20 pb-16 md:pt-28 md:pb-20">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <p class="text-[13px] font-semibold text-amber-500 uppercase tracking-wider mb-4">Blog</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-warm-900 leading-tight mb-4">Insights</h1>
+      <p class="text-lg text-warm-600 leading-relaxed">Thoughts on AI knowledge management, compounding systems, and the Brain Network.</p>
+    </div>
+  </section>
+
+  <section class="pb-20">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-white rounded-xl border border-warm-300 p-12 text-center">
+        <p class="text-[15px] text-warm-600">New articles coming soon. Stay tuned.</p>
       </div>
     </div>
-
-    <!-- Blog Posts Grid -->
-    {publishedPosts.length > 0 ? (
-      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-        {publishedPosts.map((post) => (
-          <BlogPostCard post={post} />
-        ))}
-      </div>
-    ) : (
-      <div class="bg-white rounded-xl border border-gray-200 shadow-lg p-12 text-center">
-        <p class="text-gray-500 text-lg">No blog posts yet. Check back soon!</p>
-      </div>
-    )}
-  </div>
+  </section>
 </BaseLayout>
