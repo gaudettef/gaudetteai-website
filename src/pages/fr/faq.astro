@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    q: 'C\'est quoi le Brain Network?',
+    a: 'Le Brain Network est une plateforme pour construire des systèmes IA avec une mémoire persistante. Au lieu que chaque conversation reparte de zéro, vous créez des « Brains » spécialisés qui se souviennent de tout, partagent le savoir et deviennent plus intelligents avec le temps. C\'est bâti sur la méthodologie Knowledge That Compounds (KTC).'
+  },
+  {
+    q: 'En quoi c\'est différent de ChatGPT?',
+    a: 'Les outils IA standard n\'ont pas de mémoire persistante. Chaque conversation repart à neuf. Le Brain Network vous donne des Brains spécialisés avec une mémoire persistante, un acheminement intelligent entre les domaines, et du savoir qui s\'accumule avec le temps. C\'est la différence entre un collègue amnésique et un collègue avec une mémoire parfaite.'
+  },
+  {
+    q: 'C\'est quoi un « Brain »?',
+    a: 'Un Brain est un assistant IA spécialisé avec une mémoire persistante pour un domaine spécifique. Par exemple : un Brain OPS suit les processus et les décisions, un Brain Marketing se souvient des campagnes et du ton de la marque, un Brain Juridique accumule les précédents. Chaque Brain maintient son contexte et partage le savoir avec les autres Brains au besoin.'
+  },
+  {
+    q: 'Est-ce que j\'ai besoin de compétences techniques?',
+    a: 'Non. Vous interagissez avec les Brains par conversation naturelle. Quand vous vous inscrivez, votre Brain OPS vous interviewe pour comprendre vos besoins et construit votre réseau. Si vous êtes capable d\'utiliser ChatGPT, vous êtes capable d\'utiliser le Brain Network.'
+  },
+  {
+    q: 'Ça veut dire quoi « Apportez vos propres clés » (BYOK)?',
+    a: 'Tous les plans supportent la connexion de vos propres clés API d\'Anthropic (Claude) ou Google (Gemini). Ça veut dire que vous payez le fournisseur IA directement à son prix — aucune majoration de notre part. Ça vous donne le plein contrôle sur l\'utilisation et les dépenses.'
+  },
+  {
+    q: 'Est-ce que mes données sont sécurisées?',
+    a: 'Oui. Vos Brains et leur savoir sont privés à votre compte. Nous utilisons Supabase avec la sécurité au niveau des rangées, et toutes les données sont chiffrées en transit et au repos. Avec le BYOK, vos conversations IA vont directement au fournisseur — on ne les voit jamais.'
+  },
+  {
+    q: 'Qu\'est-ce qui se passe pendant l\'essai gratuit?',
+    a: 'Vous avez 14 jours d\'accès complet sans carte de crédit requise. Votre Brain OPS va vous interviewer, vous aider à configurer vos premiers Brains et commencer à capturer le savoir immédiatement. Quand l\'essai se termine, vous choisissez un plan ou vos données sont conservées pendant 30 jours.'
+  },
+  {
+    q: 'Est-ce que je peux changer de plan?',
+    a: 'Oui, vous pouvez passer à un plan supérieur ou inférieur à tout moment. Les changements prennent effet à votre prochain cycle de facturation. Si vous passez à un plan supérieur en milieu de cycle, le montant sera calculé au prorata.'
+  },
+  {
+    q: 'Est-ce que vous offrez des services entreprise ou de consulting?',
+    a: 'Oui. Pour les organisations qui ont besoin d\'une architecture Brain Network personnalisée, d\'un déploiement sur site ou d\'une formation d\'équipe, nous offrons du consulting personnalisé. Visitez notre page consulting ou contactez-nous pour planifier un appel découverte.'
+  },
+];
+---
+
+<BaseLayout title="FAQ" lang="fr">
+  <section class="pt-20 pb-16 md:pt-28 md:pb-20">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="text-center mb-12">
+        <p class="text-[13px] font-semibold text-amber-500 uppercase tracking-wider mb-4">FAQ</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-warm-900 leading-tight mb-4">Questions fréquemment posées</h1>
+        <p class="text-lg text-warm-600 leading-relaxed">Tout ce que vous devez savoir sur le Brain Network.</p>
+      </div>
+
+      <div class="space-y-3">
+        {faqs.map(faq => (
+          <details class="group bg-white rounded-xl border border-warm-300 overflow-hidden">
+            <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+              <span class="font-semibold text-[15px] text-warm-900 pr-4">{faq.q}</span>
+              <svg class="w-5 h-5 text-warm-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 -mt-1">
+              <div class="border-t border-warm-200 pt-4">
+                <p class="text-[14px] text-warm-600 leading-relaxed">{faq.a}</p>
+              </div>
+            </div>
+          </details>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-[15px] text-warm-600 mb-4">Encore des questions?</p>
+        <a href="/fr/contact" class="inline-flex items-center justify-center bg-warm-900 text-warm-50 px-7 py-3 rounded-lg font-semibold text-[15px] hover:bg-warm-800 transition-colors">
+          Contactez-nous
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

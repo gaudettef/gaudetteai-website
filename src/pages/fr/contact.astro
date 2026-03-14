@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" lang="fr">
+  <section class="pt-20 pb-16 md:pt-28 md:pb-20">
+    <div class="max-w-2xl mx-auto px-5">
+      <div class="text-center mb-12">
+        <p class="text-[13px] font-semibold text-amber-500 uppercase tracking-wider mb-4">Contact</p>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold text-warm-900 leading-tight mb-4">Contactez-nous</h1>
+        <p class="text-lg text-warm-600 leading-relaxed">Des questions sur le Brain Network ou le consulting entreprise? Nous serions ravis de vous entendre.</p>
+      </div>
+
+      <div class="bg-white rounded-xl border border-warm-300 p-8">
+        <form name="contact" method="POST" data-netlify="true" class="space-y-5">
+          <input type="hidden" name="form-name" value="contact" />
+          <div>
+            <label for="name" class="block text-[13px] font-semibold text-warm-900 mb-1.5">Nom</label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom complet"
+              class="w-full px-4 py-3 bg-warm-50 border border-warm-300 rounded-lg text-[14px] text-warm-900 placeholder-warm-500 focus:outline-none focus:ring-2 focus:ring-warm-900 focus:border-warm-900 transition-all" />
+          </div>
+          <div>
+            <label for="email" class="block text-[13px] font-semibold text-warm-900 mb-1.5">Courriel</label>
+            <input type="email" id="email" name="email" required placeholder="vous@entreprise.com"
+              class="w-full px-4 py-3 bg-warm-50 border border-warm-300 rounded-lg text-[14px] text-warm-900 placeholder-warm-500 focus:outline-none focus:ring-2 focus:ring-warm-900 focus:border-warm-900 transition-all" />
+          </div>
+          <div>
+            <label for="company" class="block text-[13px] font-semibold text-warm-900 mb-1.5">Entreprise <span class="text-warm-500 font-normal">(optionnel)</span></label>
+            <input type="text" id="company" name="company" placeholder="Votre entreprise"
+              class="w-full px-4 py-3 bg-warm-50 border border-warm-300 rounded-lg text-[14px] text-warm-900 placeholder-warm-500 focus:outline-none focus:ring-2 focus:ring-warm-900 focus:border-warm-900 transition-all" />
+          </div>
+          <div>
+            <label for="message" class="block text-[13px] font-semibold text-warm-900 mb-1.5">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Parlez-nous de vos besoins..."
+              class="w-full px-4 py-3 bg-warm-50 border border-warm-300 rounded-lg text-[14px] text-warm-900 placeholder-warm-500 focus:outline-none focus:ring-2 focus:ring-warm-900 focus:border-warm-900 transition-all resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full bg-warm-900 text-warm-50 py-3.5 rounded-lg font-semibold text-[15px] hover:bg-warm-800 transition-colors">
+            Envoyer le message
+          </button>
+        </form>
+      </div>
+
+      <div class="mt-6 bg-white rounded-xl border border-warm-300 p-6">
+        <div class="flex flex-col sm:flex-row gap-6">
+          <div>
+            <p class="text-[12px] font-semibold text-warm-500 uppercase tracking-wider mb-1">Courriel</p>
+            <p class="text-[14px] text-warm-900">contact@gaudetteai.com</p>
+          </div>
+          <div>
+            <p class="text-[12px] font-semibold text-warm-500 uppercase tracking-wider mb-1">Situé à</p>
+            <p class="text-[14px] text-warm-900">Sherbrooke, QC</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

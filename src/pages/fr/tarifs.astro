@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Tarifs" lang="fr">
+  <!-- Hero -->
+  <section class="pt-20 pb-12 md:pt-28 md:pb-16">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <p class="text-[13px] font-semibold text-amber-500 uppercase tracking-wider mb-4">Tarifs</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-warm-900 leading-tight mb-4">
+        Tarification simple et transparente
+      </h1>
+      <p class="text-lg text-warm-600 leading-relaxed max-w-xl mx-auto">
+        14 jours d'essai gratuit sur chaque plan. Aucune carte de crédit requise.
+        Apportez vos propres clés API pour un usage illimité au prix coûtant.
+      </p>
+    </div>
+  </section>
+
+  <!-- Billing Toggle -->
+  <section class="pb-4">
+    <div class="max-w-5xl mx-auto px-5 flex justify-center">
+      <div class="inline-flex items-center gap-3 bg-white rounded-lg border border-warm-300 p-1">
+        <button id="toggle-monthly" class="px-4 py-2 text-[13px] font-semibold rounded-md bg-warm-900 text-warm-50 transition-all">Mensuel</button>
+        <button id="toggle-annual" class="px-4 py-2 text-[13px] font-semibold rounded-md text-warm-600 hover:text-warm-900 transition-all">
+          Annuel <span class="text-amber-500 text-[11px]">Économisez 20 %</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Cards (dynamically loaded from API) -->
+  <section class="pb-20 pt-8">
+    <div class="max-w-5xl mx-auto px-5">
+      <div id="pricing-cards" class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl border border-warm-300 p-7 animate-pulse"><div class="h-4 bg-warm-200 rounded w-20 mb-4"></div><div class="h-10 bg-warm-200 rounded w-24 mb-4"></div><div class="h-3 bg-warm-200 rounded w-full mb-8"></div><div class="space-y-3"><div class="h-3 bg-warm-200 rounded w-3/4"></div><div class="h-3 bg-warm-200 rounded w-2/3"></div><div class="h-3 bg-warm-200 rounded w-3/4"></div></div></div>
+        <div class="bg-white rounded-xl border border-warm-300 p-7 animate-pulse"><div class="h-4 bg-warm-200 rounded w-20 mb-4"></div><div class="h-10 bg-warm-200 rounded w-24 mb-4"></div><div class="h-3 bg-warm-200 rounded w-full mb-8"></div><div class="space-y-3"><div class="h-3 bg-warm-200 rounded w-3/4"></div><div class="h-3 bg-warm-200 rounded w-2/3"></div><div class="h-3 bg-warm-200 rounded w-3/4"></div></div></div>
+        <div class="bg-white rounded-xl border border-warm-300 p-7 animate-pulse"><div class="h-4 bg-warm-200 rounded w-20 mb-4"></div><div class="h-10 bg-warm-200 rounded w-24 mb-4"></div><div class="h-3 bg-warm-200 rounded w-full mb-8"></div><div class="space-y-3"><div class="h-3 bg-warm-200 rounded w-3/4"></div><div class="h-3 bg-warm-200 rounded w-2/3"></div><div class="h-3 bg-warm-200 rounded w-3/4"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BYOK Section -->
+  <section class="pb-20">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-white rounded-xl border border-warm-300 p-8 text-center">
+        <div class="w-10 h-10 rounded-lg bg-warm-100 flex items-center justify-center mx-auto mb-4">
+          <span class="text-lg">&#128273;</span>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-warm-900 mb-2">Apportez vos propres clés</h3>
+        <p class="text-[14px] text-warm-600 leading-relaxed max-w-lg mx-auto">
+          Tous les plans supportent le BYOK. Connectez vos propres clés API Anthropic ou Google AI
+          et payez uniquement ce que vous utilisez, au prix du fournisseur. Aucune majoration.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enterprise -->
+  <section class="pb-20">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-warm-900 rounded-2xl p-8 md:p-12 text-center">
+        <p class="text-[13px] font-semibold text-amber-500 uppercase tracking-wider mb-3">Entreprise</p>
+        <h2 class="font-serif text-2xl md:text-3xl font-bold text-warm-50 mb-3">Besoin d'un déploiement personnalisé?</h2>
+        <p class="text-[15px] text-warm-400 mb-8 max-w-lg mx-auto">
+          Hébergement sur site, intégrations personnalisées, support dédié et consultation
+          pour les organisations qui ont besoin de l'implémentation complète Knowledge That Compounds.
+        </p>
+        <a href="/fr/contact" class="inline-flex items-center justify-center bg-warm-50 text-warm-900 px-8 py-3.5 rounded-lg font-semibold text-[15px] hover:bg-white transition-colors">
+          Planifier un appel découverte
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const API_URL = 'https://gmxshnvdapjrmuravgvn.supabase.co/functions/v1/get-plans';
+    const container = document.getElementById('pricing-cards');
+    const monthlyBtn = document.getElementById('toggle-monthly');
+    const annualBtn = document.getElementById('toggle-annual');
+    let billingMode = 'monthly';
+    let plans = [];
+
+    async function loadPlans() {
+      try {
+        const res = await fetch(API_URL);
+        const data = await res.json();
+        plans = (data.plans || []).filter(p => !p.is_enterprise);
+        renderCards();
+      } catch (e) {
+        console.error('Failed to load plans:', e);
+        if (container) container.innerHTML = '<p class="text-warm-500 text-center col-span-3">Impossible de charger les tarifs. Veuillez rafraîchir.</p>';
+      }
+    }
+
+    function renderCards() {
+      if (!container || !plans.length) return;
+      container.innerHTML = plans.map(p => {
+        const price = billingMode === 'annual' ? p.annual_price : p.monthly_price;
+        const isPopular = p.is_popular;
+        const features = Array.isArray(p.features) ? p.features : [];
+        const borderClass = isPopular ? 'border-2 border-warm-900' : 'border border-warm-300';
+        const btnClass = isPopular
+          ? 'bg-warm-900 text-warm-50 hover:bg-warm-800'
+          : 'bg-white text-warm-900 border border-warm-300 hover:border-warm-900';
+
+        return `
+          <div class="bg-white rounded-xl ${borderClass} p-7 flex flex-col ${isPopular ? 'relative' : ''}">
+            ${isPopular ? '<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-warm-900 text-warm-50 text-[10px] font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Le plus populaire</div>' : ''}
+            <div>
+              <p class="text-[12px] font-semibold text-warm-500 uppercase tracking-wider mb-2">${p.name}</p>
+              <div class="mb-4">
+                <span class="font-serif text-4xl font-bold text-warm-900">$${price}</span>
+                <span class="text-warm-500 text-[15px]">/mois</span>
+              </div>
+              <p class="text-[14px] text-warm-600 leading-relaxed mb-6">${p.description || ''}</p>
+            </div>
+            <ul class="space-y-3 mb-8 flex-1">
+              ${features.map(f => `
+                <li class="flex items-start gap-2.5 text-[13px] text-warm-700">
+                  <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span> ${f}
+                </li>
+              `).join('')}
+            </ul>
+            <a href="https://app.gaudetteai.com" class="block text-center ${btnClass} px-6 py-3 rounded-lg font-semibold text-[14px] transition-colors">
+              Essai gratuit
+            </a>
+          </div>`;
+      }).join('');
+    }
+
+    function showMonthly() {
+      billingMode = 'monthly';
+      monthlyBtn?.classList.add('bg-warm-900', 'text-warm-50');
+      monthlyBtn?.classList.remove('text-warm-600');
+      annualBtn?.classList.remove('bg-warm-900', 'text-warm-50');
+      annualBtn?.classList.add('text-warm-600');
+      renderCards();
+    }
+
+    function showAnnual() {
+      billingMode = 'annual';
+      annualBtn?.classList.add('bg-warm-900', 'text-warm-50');
+      annualBtn?.classList.remove('text-warm-600');
+      monthlyBtn?.classList.remove('bg-warm-900', 'text-warm-50');
+      monthlyBtn?.classList.add('text-warm-600');
+      renderCards();
+    }
+
+    monthlyBtn?.addEventListener('click', showMonthly);
+    annualBtn?.addEventListener('click', showAnnual);
+    loadPlans();
+  </script>
+</BaseLayout>
