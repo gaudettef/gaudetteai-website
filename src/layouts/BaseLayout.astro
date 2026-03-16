@@ -217,7 +217,8 @@ const t = nav[lang as keyof typeof nav] || nav.en;
             <h4 class="text-[11px] font-semibold text-warm-500 uppercase tracking-wider mb-4">{lang === 'fr' ? 'Entreprise' : 'Company'}</h4>
             <ul class="space-y-2.5">
               <li><a href={t.aboutLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.about}</a></li>
-              <li><a href={t.consultingLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.consulting}</a></li>
+              <!-- Consulting: coming post-launch -->
+
               <li><a href={t.blogLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.blog}</a></li>
               <li><a href={t.contactLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.contact}</a></li>
             </ul>
@@ -228,7 +229,8 @@ const t = nav[lang as keyof typeof nav] || nav.en;
             <h4 class="text-[11px] font-semibold text-warm-500 uppercase tracking-wider mb-4">Resources</h4>
             <ul class="space-y-2.5">
               <li><a href={t.faqLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.faq}</a></li>
-              <li><a href="https://reddit.com/r/KTCommunity" target="_blank" rel="noopener" class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">Community</a></li>
+              <!-- Community link: enable when subreddit is active -->
+
               <li><a href="mailto:contact@gaudetteai.com" class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">contact@gaudetteai.com</a></li>
             </ul>
           </div>
