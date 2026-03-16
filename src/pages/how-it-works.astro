@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="How It Works" description="Sign up, set up your AI keys, and start building your Brain Network in minutes.">
+  <!-- Hero -->
+  <section class="pt-20 pb-16 md:pt-28 md:pb-20">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <p class="text-[13px] font-semibold text-amber-500 uppercase tracking-wider mb-4">How it works</p>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-warm-900 leading-tight mb-6">
+        Up and running in minutes
+      </h1>
+      <p class="text-lg text-warm-600 leading-relaxed max-w-2xl mx-auto">
+        Sign up, connect your AI key, and let your OPS Brain build a network tailored to you.
+        No installation. No configuration files. Just open your browser.
+      </p>
+    </div>
+  </section>
+
+  <!-- Step 1: Sign Up -->
+  <section class="pb-12">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-white rounded-xl border border-warm-300 p-7 flex gap-5">
+        <div class="w-12 h-12 rounded-xl bg-warm-900 text-warm-50 flex items-center justify-center flex-shrink-0 font-serif text-xl font-bold">1</div>
+        <div>
+          <h2 class="font-serif text-xl font-semibold text-warm-900 mb-2">Sign up in seconds</h2>
+          <p class="text-[14px] text-warm-600 leading-relaxed mb-3">
+            Create your account with Google, Microsoft, GitHub, or email.
+            No credit card required. Your 14-day free trial starts immediately.
+          </p>
+          <p class="text-[13px] text-warm-500">
+            Your OPS Brain is created automatically the moment you sign up &mdash;
+            ready to interview you and build your network.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 2: API Keys -->
+  <section class="pb-12">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-white rounded-xl border border-warm-300 p-7 flex gap-5">
+        <div class="w-12 h-12 rounded-xl bg-warm-900 text-warm-50 flex items-center justify-center flex-shrink-0 font-serif text-xl font-bold">2</div>
+        <div class="flex-1">
+          <h2 class="font-serif text-xl font-semibold text-warm-900 mb-2">Connect your AI key</h2>
+          <p class="text-[14px] text-warm-600 leading-relaxed mb-4">
+            Gaudette AI uses Bring Your Own Key (BYOK) &mdash; connect your own Claude or Gemini
+            API key and pay the AI provider directly at their rates. Zero markup.
+          </p>
+
+          <!-- Provider cards -->
+          <div class="grid sm:grid-cols-2 gap-4 mb-4">
+            <div class="rounded-lg border border-warm-200 p-4 bg-warm-50">
+              <p class="font-semibold text-[14px] text-warm-900 mb-2">Claude (Anthropic)</p>
+              <ol class="space-y-1.5 text-[13px] text-warm-600">
+                <li class="flex gap-2"><span class="text-warm-400 flex-shrink-0">1.</span> Go to <a href="https://console.anthropic.com" target="_blank" rel="noopener" class="text-blue-600 underline underline-offset-2">console.anthropic.com</a></li>
+                <li class="flex gap-2"><span class="text-warm-400 flex-shrink-0">2.</span> Sign up or log in</li>
+                <li class="flex gap-2"><span class="text-warm-400 flex-shrink-0">3.</span> Go to API Keys &rarr; Create Key</li>
+                <li class="flex gap-2"><span class="text-warm-400 flex-shrink-0">4.</span> Copy and paste in your dashboard</li>
+              </ol>
+            </div>
+            <div class="rounded-lg border border-warm-200 p-4 bg-warm-50">
+              <p class="font-semibold text-[14px] text-warm-900 mb-2">Gemini (Google)</p>
+              <ol class="space-y-1.5 text-[13px] text-warm-600">
+                <li class="flex gap-2"><span class="text-warm-400 flex-shrink-0">1.</span> Go to <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener" class="text-blue-600 underline underline-offset-2">aistudio.google.com</a></li>
+                <li class="flex gap-2"><span class="text-warm-400 flex-shrink-0">2.</span> Click Get API Key</li>
+                <li class="flex gap-2"><span class="text-warm-400 flex-shrink-0">3.</span> Create in a new project</li>
+                <li class="flex gap-2"><span class="text-warm-400 flex-shrink-0">4.</span> Copy and paste in your dashboard</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="rounded-lg bg-amber-50 border border-amber-200 px-4 py-3">
+            <p class="text-[13px] text-amber-800">
+              <strong>Don't have a key yet?</strong> You can skip this step during signup.
+              Plans with AI included (Explorer, Standard, Premium) don't need API keys at all.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 3: Onboarding -->
+  <section class="pb-12">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-white rounded-xl border border-warm-300 p-7 flex gap-5">
+        <div class="w-12 h-12 rounded-xl bg-warm-900 text-warm-50 flex items-center justify-center flex-shrink-0 font-serif text-xl font-bold">3</div>
+        <div>
+          <h2 class="font-serif text-xl font-semibold text-warm-900 mb-2">Your OPS Brain interviews you</h2>
+          <p class="text-[14px] text-warm-600 leading-relaxed mb-3">
+            Open the Terminal and your OPS Brain will guide you through a 5&ndash;10 minute
+            conversation to understand your work, goals, and needs.
+          </p>
+          <ul class="space-y-2 text-[13px] text-warm-700">
+            <li class="flex items-start gap-2">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span>
+              Asks about your role and what you want to accomplish
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span>
+              Proposes a brain structure tailored to you
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span>
+              You review and approve before anything is created
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-500 mt-0.5 flex-shrink-0">&#10003;</span>
+              Your network goes live &mdash; ready to use
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 4: Use It -->
+  <section class="pb-20">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-white rounded-xl border border-warm-300 p-7 flex gap-5">
+        <div class="w-12 h-12 rounded-xl bg-warm-900 text-warm-50 flex items-center justify-center flex-shrink-0 font-serif text-xl font-bold">4</div>
+        <div>
+          <h2 class="font-serif text-xl font-semibold text-warm-900 mb-2">Start working &mdash; knowledge compounds</h2>
+          <p class="text-[14px] text-warm-600 leading-relaxed mb-3">
+            Talk to your Brains through the Terminal, save decisions, route information.
+            Every interaction makes the system smarter. Come back tomorrow and
+            everything is still there.
+          </p>
+          <p class="text-[13px] text-warm-500">
+            Optional: connect your Brain Network to Claude Code, Cursor, or ChatGPT by
+            pasting your MCP URL in their settings. Your Brains work everywhere.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nothing to Install -->
+  <section class="pb-20">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-white rounded-xl border border-warm-300 p-8 text-center">
+        <div class="w-12 h-12 rounded-xl bg-warm-100 flex items-center justify-center mx-auto mb-4">
+          <span class="text-2xl">&#127760;</span>
+        </div>
+        <h3 class="font-serif text-xl font-semibold text-warm-900 mb-3">Nothing to install</h3>
+        <p class="text-[14px] text-warm-600 leading-relaxed max-w-lg mx-auto mb-4">
+          Gaudette AI is 100% browser-based. Works on any device, any operating system.
+          On mobile, add to your home screen for a native app experience.
+        </p>
+        <div class="flex flex-wrap justify-center gap-3 text-[12px] text-warm-500">
+          <span class="px-3 py-1.5 rounded-full bg-warm-100">No .exe</span>
+          <span class="px-3 py-1.5 rounded-full bg-warm-100">No app store</span>
+          <span class="px-3 py-1.5 rounded-full bg-warm-100">No Docker</span>
+          <span class="px-3 py-1.5 rounded-full bg-warm-100">No self-hosting</span>
+          <span class="px-3 py-1.5 rounded-full bg-warm-100">Works on mobile</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="pb-20">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="text-center mb-10">
+        <h2 class="font-serif text-2xl font-bold text-warm-900">Common questions</h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-warm-300 p-6">
+          <h3 class="font-semibold text-[15px] text-warm-900 mb-2">Why do I need my own API key?</h3>
+          <p class="text-[14px] text-warm-600 leading-relaxed">
+            BYOK means you control your AI costs with direct provider pricing &mdash; no markup.
+            You maintain a direct relationship with Anthropic or Google. We charge for the
+            platform (routing, persistence, knowledge management), not the AI inference.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-warm-300 p-6">
+          <h3 class="font-semibold text-[15px] text-warm-900 mb-2">Can I start without a key?</h3>
+          <p class="text-[14px] text-warm-600 leading-relaxed">
+            Yes. Plans with AI included (Explorer, Standard, Premium) provide Claude and Gemini
+            access out of the box. BYOK plans can also skip key setup initially &mdash;
+            you can add your key later in Settings.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-warm-300 p-6">
+          <h3 class="font-semibold text-[15px] text-warm-900 mb-2">How do I connect to Claude Code or Cursor?</h3>
+          <p class="text-[14px] text-warm-600 leading-relaxed">
+            Copy your MCP URL from your dashboard (Settings &rarr; Integration) and paste it
+            into your tool's MCP settings. Your Brain Network becomes available as tools
+            inside your development environment.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl border border-warm-300 p-6">
+          <h3 class="font-semibold text-[15px] text-warm-900 mb-2">What happens after the trial?</h3>
+          <p class="text-[14px] text-warm-600 leading-relaxed">
+            After 14 days, your account enters read-only mode. All your data is preserved
+            for 90 days. Subscribe to any plan to restore full access instantly.
+            No data is ever deleted during this period.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="pb-8">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="bg-warm-900 rounded-2xl p-8 md:p-12 text-center">
+        <h2 class="font-serif text-2xl md:text-3xl font-bold text-warm-50 mb-3">Ready in 5 minutes</h2>
+        <p class="text-[15px] text-warm-400 mb-8 max-w-lg mx-auto">
+          Sign up, connect your key, talk to your OPS Brain. Your network
+          starts compounding knowledge from the first conversation.
+        </p>
+        <a href="https://app.gaudetteai.com" class="inline-flex items-center justify-center bg-warm-50 text-warm-900 px-8 py-3.5 rounded-lg font-semibold text-[15px] hover:bg-white transition-colors">
+          Start Free Trial
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

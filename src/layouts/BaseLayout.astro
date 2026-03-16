@@ -12,16 +12,22 @@ const { title, description = 'AI knowledge that compounds — Brain Network by G
 const nav = {
   en: {
     home: 'Home',
+    product: 'Product',
     pricing: 'Pricing',
+    howItWorks: 'How It Works',
     methodology: 'Methodology',
     consulting: 'Consulting',
+    about: 'About',
     blog: 'Blog',
     faq: 'FAQ',
     contact: 'Contact',
     homeLink: '/',
+    productLink: '/product',
     pricingLink: '/pricing',
+    howItWorksLink: '/how-it-works',
     methodologyLink: '/methodology',
     consultingLink: '/consulting',
+    aboutLink: '/about',
     blogLink: '/blog',
     faqLink: '/faq',
     contactLink: '/contact',
@@ -30,16 +36,22 @@ const nav = {
   },
   fr: {
     home: 'Accueil',
+    product: 'Produit',
     pricing: 'Tarifs',
+    howItWorks: 'Comment ça marche',
     methodology: 'Méthodologie',
     consulting: 'Services',
+    about: 'À propos',
     blog: 'Blog',
     faq: 'FAQ',
     contact: 'Contact',
     homeLink: '/fr',
+    productLink: '/product',
     pricingLink: '/fr/tarifs',
+    howItWorksLink: '/how-it-works',
     methodologyLink: '/fr/methodologie',
     consultingLink: '/fr/consulting',
+    aboutLink: '/about',
     blogLink: '/fr/blog',
     faqLink: '/fr/faq',
     contactLink: '/fr/contact',
@@ -120,11 +132,11 @@ const t = nav[lang as keyof typeof nav] || nav.en;
 
         <!-- Desktop Nav -->
         <div class="desktop-nav flex items-center gap-6">
+          <a href={t.productLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.product}</a>
           <a href={t.pricingLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.pricing}</a>
-          <a href={t.methodologyLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.methodology}</a>
-          <a href={t.consultingLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.consulting}</a>
+          <a href={t.howItWorksLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.howItWorks}</a>
+          <a href={t.aboutLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.about}</a>
           <a href={t.blogLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.blog}</a>
-          <a href={t.faqLink} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">{t.faq}</a>
           <span class="text-warm-300">|</span>
           <a href={lang === 'fr' ? '/' : '/fr'} class="text-[13px] font-medium text-warm-600 hover:text-warm-900 transition-colors">
             {lang === 'fr' ? 'EN' : 'FR'}
@@ -150,9 +162,10 @@ const t = nav[lang as keyof typeof nav] || nav.en;
 
       <!-- Mobile Menu -->
       <div class="mobile-menu border-t border-warm-300 bg-white" id="mobile-menu">
+        <a href={t.productLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.product}</a>
         <a href={t.pricingLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.pricing}</a>
-        <a href={t.methodologyLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.methodology}</a>
-        <a href={t.consultingLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.consulting}</a>
+        <a href={t.howItWorksLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.howItWorks}</a>
+        <a href={t.aboutLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.about}</a>
         <a href={t.blogLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.blog}</a>
         <a href={t.faqLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.faq}</a>
         <a href={t.contactLink} class="block px-5 py-3 text-[14px] font-medium text-warm-700 border-b border-warm-200 hover:bg-warm-100">{t.contact}</a>
@@ -192,8 +205,9 @@ const t = nav[lang as keyof typeof nav] || nav.en;
           <div>
             <h4 class="text-[11px] font-semibold text-warm-500 uppercase tracking-wider mb-4">Product</h4>
             <ul class="space-y-2.5">
+              <li><a href={t.productLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">Brain Network</a></li>
               <li><a href={t.pricingLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.pricing}</a></li>
-              <li><a href={t.ctaLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">Brain Network</a></li>
+              <li><a href={t.howItWorksLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.howItWorks}</a></li>
               <li><a href={t.methodologyLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.methodology}</a></li>
             </ul>
           </div>
@@ -202,6 +216,7 @@ const t = nav[lang as keyof typeof nav] || nav.en;
           <div>
             <h4 class="text-[11px] font-semibold text-warm-500 uppercase tracking-wider mb-4">{lang === 'fr' ? 'Entreprise' : 'Company'}</h4>
             <ul class="space-y-2.5">
+              <li><a href={t.aboutLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.about}</a></li>
               <li><a href={t.consultingLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.consulting}</a></li>
               <li><a href={t.blogLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.blog}</a></li>
               <li><a href={t.contactLink} class="text-[13px] text-warm-600 hover:text-warm-900 transition-colors">{t.contact}</a></li>
@@ -222,6 +237,9 @@ const t = nav[lang as keyof typeof nav] || nav.en;
         <div class="border-t border-warm-300 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p class="text-[12px] text-warm-500">&copy; 2026 Gaudette AI inc. All rights reserved.</p>
           <div class="flex gap-6">
+            <a href="/privacy" class="text-[12px] text-warm-500 hover:text-warm-900 transition-colors">Privacy</a>
+            <a href="/terms" class="text-[12px] text-warm-500 hover:text-warm-900 transition-colors">Terms</a>
+            <a href="/dpa" class="text-[12px] text-warm-500 hover:text-warm-900 transition-colors">DPA</a>
             <a href={lang === 'fr' ? '/' : '/fr'} class="text-[12px] text-warm-500 hover:text-warm-900 transition-colors">{lang === 'fr' ? 'English' : 'Français'}</a>
           </div>
         </div>
